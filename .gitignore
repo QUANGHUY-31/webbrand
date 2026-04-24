@@ -1,0 +1,55 @@
+# ========================
+# 🔷 ASP.NET / C#
+# ========================
+
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+*.dll
+*.exe
+*.pdb
+
+# Logs
+*.log
+
+# ========================
+# 🔷 Visual Studio Code
+# ========================
+
+.vscode/
+
+# ========================
+# 🔷 Frontend (JS/Node)
+# ========================
+
+node_modules/
+dist/
+build/
+
+# ========================
+# 🔷 Environment (BẢO MẬT)
+# ========================
+
+.env
+.env.*
+
+# ========================
+# 🔷 OS files
+# ========================
+
+.DS_Store
+Thumbs.db
+
+# ========================
+# 🔷 Zip / file nặng
+# ========================
+
+*.zip
+*.rar
+*.7z
