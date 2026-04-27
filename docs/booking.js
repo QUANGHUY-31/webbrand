@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         try {
-            const res = await fetch("http://localhost:5022/api/booking", {
+            const res = await fetch("https://webbrand-zdja.onrender.com/api/booking", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

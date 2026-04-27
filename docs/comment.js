@@ -6,7 +6,7 @@ document.getElementById("comment-form").addEventListener("submit", async functio
     const message = document.getElementById("message").value;
 
     try {
-        const res = await fetch("http://localhost:5022/api/comment", {
+        const res = await fetch("https://webbrand-zdja.onrender.com/api/comment", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
