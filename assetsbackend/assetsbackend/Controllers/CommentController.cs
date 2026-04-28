@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using assetsbackend.Models;
+using Microsoft.EntityFrameworkCore;
+using assetsbackend.Domain.Entity;
+using assetsbackend.Infrastructure;
 
 namespace assetsbackend.Controllers
 {
@@ -7,23 +9,28 @@ namespace assetsbackend.Controllers
     [Route("api/[controller]")]
     public class CommentController : ControllerBase
     {
-        private static List<Comment> comments = new List<Comment>();
+        private readonly AppDbContext __context;
+        public CommentController(AppDbContext context)
+        {
+            __context = context;
+        }
 
         [HttpPost]
-        public IActionResult AddComment([FromBody] Comment comment)
+        public async Task<IActionResult> AddComment([FromBody] Comment comment)
         {
-            comments.Add(comment);
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
-            return Ok(new
-            {
-                message = "Comment added!",
-                data = comment
-            });
+            __context.Comments.Add(comment);
+            await __context.SaveChangesAsync();
+
+            return Ok(comment);
         }
 
         [HttpGet]
-        public IActionResult GetComments()
+        public async Task<IActionResult> GetComments()
         {
+            var comments = await __context.Comments.ToListAsync();
             return Ok(comments);
         }
     }
