@@ -68,6 +68,23 @@ Kiểu dáng
 
 }
 
+#header .mobile-menu-btn {
+    display: none;
+    height: 46.5px;
+    padding: 0 20px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+    line-height: 46.5px;
+    cursor: pointer;
+}
+
+#header .mobile-menu-btn:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
 /* search */
 
 .search-wrapper {
